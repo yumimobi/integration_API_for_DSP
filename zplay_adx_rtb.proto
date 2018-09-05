@@ -1,0 +1,111 @@
+syntax = "proto2";
+package zadx;
+option java_outer_classname = "ZadxExt";
+
+import "openrtb.proto";
+
+extend zadx.BidRequest {
+    // 当前协议版本号，目前为1
+    optional int32 version = 200;
+
+    // true标记是心跳检测请求。当为ping请求时，
+    // DSP需要返回一个没有广告（即不设置BidResponse.ads字段）的应答
+    optional bool is_ping = 202;
+
+    // true标记需要返回的所有素材及追踪链接必须是https链接，
+    optional bool need_https = 203;
+}
+
+
+extend zadx.BidRequest.Geo {
+    // 经纬度精度
+    // 请参见[Decimal degrees](https://en.wikipedia.org/wiki/Decimal_degrees)
+    optional int32 accu = 200;
+
+    // 街道名称
+    optional string street = 201;
+}
+
+
+extend zadx.BidRequest.Imp {
+    // 是否为开屏广告
+    optional bool is_splash_screen = 200;
+
+    // 支持的素材类型数组, 1:图片，2:图文，3:视频，4:html5
+    repeated int32 inventory_types = 201;
+
+    // 广告类型，0:banner，1:插屏，2:开屏，3:原生，4:视频
+    optional int32 ad_type = 202;
+}
+
+extend zadx.BidRequest.Device {
+    // 国家运营商编号
+    optional string plmn = 200;
+
+    // imei码
+    optional string imei = 201;
+
+    // mac地址
+    optional string mac = 202;
+
+    // Android ID
+    optional string android_id = 203;
+
+    // AD ID
+    optional string adid = 204;
+
+    // 设备方向，1表示竖向，2表示横向
+    optional int32 orientation = 205;
+
+    // imsi码
+    optional string imsi = 206;
+
+    // idfv码
+    optional string idfv = 207;
+}
+
+extend zadx.BidResponse.SeatBid.Bid {
+  // 曝光追踪地址, 允许使用宏
+  repeated string imptrackers = 200;
+
+  // 点击追踪地址, 允许使用宏
+  repeated string clktrackers = 201;
+    
+  // 广告点击跳转地址，允许使用宏
+  optional string clkurl = 202;
+
+  // html广告代码，允许使用宏
+  optional string html_snippet = 203;
+
+  // app推广广告的话，需要提供app的版本号
+  optional string app_ver = 204;
+
+  // 广告资源类型, 1:图片，2:图文，3:视频，4:html5 
+  optional int32 inventory_type = 205;
+
+  // 图文广告中的标题
+  optional string title = 206;
+
+  // 图文广告中的描述
+  optional string desc = 207;
+
+  // 广告动作类型， 1: 在app内webview打开目标链接， 2： 在系统浏览器打开目标链接, 3：打开地图，4： 拨打电话，5：播放视频, 6:App下载
+  optional int32 action = 208;
+
+  // 下载文件名，动作类型为下载类型时需要
+  optional string download_file_name = 209;
+
+  // 可玩式广告的开始播放追踪链接
+  repeated string play_start_trackers = 210;
+  // 可玩式广告的结束播放追踪链接
+  repeated string play_end_trackers = 211;
+}
+
+extend zadx.NativeResponse.Link {
+  // 链接动作类型, 1: 在app内webview打开目标链接， 2： 在系统浏览器打开目标链接, 3：打开地图，4： 拨打电话，5：播放视频, 6:App下载
+  optional int32 link_type = 200;
+}
+
+
+
+
