@@ -3,6 +3,9 @@
 #### 对接前需知
 1. [建议广告尺寸](suggested_ad_size.md)
 2. [常见问题](question_and_answer.md)
+3. [玉米ADX系统使用说明](how_to_use_dashboard.md)
+4. [玉米ADX沙箱环境使用说明](how_to_use_sandbox.md)
+
 
 #### 对接规范:
 1. [对接步骤说明](instruction.md)
