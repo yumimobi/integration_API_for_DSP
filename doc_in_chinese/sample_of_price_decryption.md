@@ -1,14 +1,13 @@
-## 价格解密算法示例
+# 价格解密算法示例
 
-> 可以使用的测试数据：
+## 可以使用的测试数据：
 
-	enckey:ABE53CC1B7FDA2903681192D105A53EC
-	sigkey:da2d9026aa90400cbc9c4db053e65b82
-	加密价格：ebHrWLBZ_vQ8id_wknHJAw
-	实际价格：3500
+    enckey: ABE53CC1B7FDA2903681192D105A53EC
+    sigkey: da2d9026aa90400cbc9c4db053e65b82
+    加密价格：ebHrWLBZ_vQ8id_wknHJAw
+    实际价格：3500
 
-
-#### PHP
+## PHP
 
 ```php
 
@@ -81,7 +80,7 @@
 	}
 ```
 
-#### JAVA
+## JAVA
 
 ```java
 
@@ -242,7 +241,7 @@
 	/**----------------end  使用范例---------------------**/
 ```
 
-#### golang
+## golang
 
 ```go
 
@@ -352,9 +351,9 @@
 	}
 ```
 
-#### C#
+## C#
 
-```c#
+```c
 
 	using System;
 	using System.Linq; 
@@ -458,4 +457,3 @@
 		}
 	}
 ```
-

@@ -1,10 +1,23 @@
-## JOSN请求和返回示例
+# SAMPLE OF JSON'S REQUEST AND RESPONSE
 
-> 示例只适用于json协议，系统默认对接都是pb协议，如果要使用以下示例，请在对接前予以说明（否则，下方对接示例不可用）
+> this sample is just for integration using json protocol.
 
+- [SAMPLE OF JSON'S REQUEST AND RESPONSE](#sample-of-jsons-request-and-response)
+	- [banner](#banner)
+		- [request of banner](#request-of-banner)
+		- [response of banner](#response-of-banner)
+	- [interstitial](#interstitial)
+		- [request of interstitial](#request-of-interstitial)
+		- [response of interstitial](#response-of-interstitial)
+	- [native](#native)
+		- [request of native](#request-of-native)
+		- [response of native](#response-of-native)
+	- [rewarded video](#rewarded-video)
+		- [response of rewarded video](#response-of-rewarded-video)
 
-### banner请求示例
+## banner
 
+### request of banner
 
 ```json
 
@@ -35,7 +48,7 @@
 	    ],
 	    "app": {
 	        "id": "1000481",
-	        "name": "国内-安卓-消灭星星官方正版",
+	        "name": "popstar",
 	        "ver": "4.5.1",
 	        "bundle": "com.brianbaek.popstar"
 	    },
@@ -47,8 +60,8 @@
 	            "lat": 27.970472,
 	            "lon": 116.34153,
 	            "country": "CHN",
-	            "region": "北京",
-	            "city": "北京",
+	            "region": "beijing",
+	            "city": "beijing",
 	            "type": 2,
 	            "ext": {
 	                "accu": 0
@@ -83,8 +96,7 @@
 	}
 ```
 
-### banner返回示例
-
+### response of banner
 
 ```json
 
@@ -128,7 +140,9 @@
 	}
 ```
 
-### 插屏请求示例
+## interstitial
+
+### request of interstitial
 
 ```json
 
@@ -169,8 +183,8 @@
 	            "lat": 31.359089,
 	            "lon": 103.49656,
 	            "country": "CHN",
-	            "region": "四川",
-	            "city": "成都",
+	            "region": "sichuan",
+	            "city": "chengdu",
 	            "type": 2,
 	            "ext": {
 	                "accu": 0
@@ -205,7 +219,7 @@
 	}
 ```
 
-### 插屏返回示例
+### response of interstitial
 
 ```json
 
@@ -247,8 +261,9 @@
 	}
 ```
 
+## native
 
-### 原生请求示例
+### request of native
 
 ```json
 
@@ -325,7 +340,7 @@
 	    ],
 	    "app": {
 	        "id": "1007557",
-	        "name": "快手看片",
+	        "name": "kuaishou",
 	        "ver": "",
 	        "bundle": "com.kandian.vodapp"
 	    },
@@ -362,7 +377,7 @@
 	}
 ```
 
-### 原生返回示例
+### response of native
 
 ```json
 
@@ -387,7 +402,7 @@
 	                                {
 	                                    "id": 1,
 	                                    "title": {
-	                                        "text": "掌游天下落地页"
+	                                        "text": "landing_page"
 	                                    }
 	                                }
 	                            ],
@@ -414,10 +429,11 @@
 	}
 ```
 
+## rewarded video
 
-### 视频示例
+### response of rewarded video
 
-> 视频请求的inventory_type=3；需要返回vast视频和展示图片两部分，展示图片可在iurl或者html_snippet返回。这里简单给出adm的vast示例，
+> for video ads, the inventory_type in request is 3. for response of video ads, it's needed that returning video in VAST format and image together. URL of image can filled in parameters of iurl or html_snippet. here is the sample of parameter of adm in VAST format.
 
 ```xml
 
@@ -432,7 +448,7 @@
 	          <linear>
 	            <Duration>12</Duration>  
 	            ..
-	              这里的播放时长要求正整数，否则会解析出错
+	              //duration is needed to positive integer
 	            <MediaFiles>
 	              <MediaFile id="14921137"><![CDATA[ http://live.us.sinaimg.cn/002qTVxrjx074BMTTYSI010401000rFi0k01.mp4 ]]></MediaFile>
 	            </MediaFiles>
