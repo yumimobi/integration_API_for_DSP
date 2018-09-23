@@ -25,7 +25,9 @@
 
 |           marco            |  type |      description     |
 | --------------------------- | ----- | ------------- |
-| YUMI_ADSERVICE_CLICK_DOWN_X | int32 | X coordinates of position which user clicks on the ads |
-| YUMI_ADSERVICE_CLICK_DOWN_Y | int32 | Y coordinates of position which user clicks on the ads |
-| YUMI_ADSERVICE_CLICK_UP_X   | int32 | X coordinates of position which user releases clicking |
-| YUMI_ADSERVICE_CLICK_UP_Y   | int32 | Y coordinates of position which user releases clicking |
+| YUMI_ADSERVICE_CLICK_DOWN_X | int32 | x-coordinate of               |
+| finger pressing             |
+| YUMI_ADSERVICE_CLICK_DOWN_Y | int32 | y-coordinate of               |
+| finger pressing            |
+| YUMI_ADSERVICE_CLICK_UP_X   | int32 | x-coordinate of finger rising |
+| YUMI_ADSERVICE_CLICK_UP_Y   | int32 | y-coordinate of finger rising |

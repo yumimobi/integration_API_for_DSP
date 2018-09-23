@@ -16,4 +16,4 @@
 
 6. Test with a little online inventory and confirm the statistics data
 
-7. deploy
+7. deploy the integration
