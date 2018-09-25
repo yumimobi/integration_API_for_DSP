@@ -147,7 +147,8 @@ Zplay Adx RTB 总共包含三个步骤。
 | tagid                        | string |        | 否   | 广告位id                                                                                                                                              |
 | extensions[is_splash_screen] | bool   | false  | 否   | 是否为开屏广告，true表示开屏，false表示非开屏                                                                                                         |
 | extensions[inventory_types]  | int[]  | [1]    | 是   | 支持的素材类型数组，1：图片，2：图文，3：视频，4：html5，5：文本，6：原生， 7：html5 url，即一个指向html5素材页面的url。如果为空，则默认只支持1：图片 |
-| extensions[ad_type]          | int    | 0      | 否   | 广告类型，0：banner，1：插屏，2：开屏，3：原生，4：视频；255：unknown                                                                                 |
+| extensions[ad_type]          | int    | 0      | 否   | 广告类型，0：banner，1：插屏，2：开屏，3：原生，4：视频；255：unknown |
+| extensions[tag_name]         | string |        | 否   | 广告位名称|
 
 #### 横幅信息（BidRequest.Impression.Banner）
 
