@@ -140,6 +140,7 @@ There are three steps in RTB processing:
 | extensions[is_splash_screen] | bool   | false         | no        | whether is the splash ads                                                                                                                                         |
 | extensions[inventory_types]  | int[]  | [1]           | yes       | types of material, 1: image, 2: image and text, 3: video, 4: html5 snippet, 5: text, 6: native, 7: html5 URL. by default the value is image if this array is null |
 | extensions[ad_type]          | int    | 0             | no        | ads type, 0: banner, 1: interstitial, 2: splash, 3: native, 4: rewarded video, 255: unknown                                                                       |
+| extensions[tag_name]         | string |               | no        | tag name, or called by slot name, ad unit name, etc|
 
 #### BidRequest.Impression.Banner
 
