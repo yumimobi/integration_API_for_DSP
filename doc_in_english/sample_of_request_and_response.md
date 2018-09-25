@@ -449,7 +449,7 @@
 	      <Creatives>
 	        <Creative id="14921137" AdID="14921137" sequence="1">
 	          <linear>
-	            <Duration>12</Duration>  
+	            <Duration>00:00:12</Duration>  
 	            ..
 	              //duration is needed to positive integer
 	            <MediaFiles>

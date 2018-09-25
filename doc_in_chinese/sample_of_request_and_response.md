@@ -449,7 +449,7 @@
 	      <Creatives>
 	        <Creative id="14921137" AdID="14921137" sequence="1">
 	          <linear>
-	            <Duration>12</Duration>  
+	            <Duration>00:00:12</Duration>  
 	            ..
 	              这里的播放时长要求正整数，否则会解析出错
 	            <MediaFiles>
