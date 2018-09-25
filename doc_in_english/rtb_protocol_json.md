@@ -115,7 +115,7 @@ There are three steps in RTB processing:
 | dpidsha1       | string |               | yes       | in Android device, the value should be ANDROID ID encrypted by SHA1; in iOS device, the value is ADID(also called by IDFA) encrypted by SHA1, such as "8a319e9fdf05dd8f571b6e0dc2dc2a8263a6974b" |
 | connectiontype | enum   |               | no        | 0: unknown, 1: ethernet, 2: WI-FI, 3: Unknown cellular network, 4: 2G, 5: 3G, 6: 4G, more detail, please see the proto file                                                                      |
 | devicetype     | enum   |               | no        | 1: mobile device,4: phone, 5: pad                                                                                                                                                                |
-| geo            | object |               | no        | [Geo](#bidrequestdevicegeo), Longitude and latitude information                                                                                                                             |
+| geo            | object |               | no        | [Geo](#bidrequestdevicegeo), Longitude and latitude information                                                                                                                                  |
 | ext            | object |               | no        | extension of device information                                                                                                                                                                  |
 
 #### BidRequest.Device.Ext
@@ -167,12 +167,12 @@ There are three steps in RTB processing:
 
 #### BidRequest.Imp.Ext
 
-| parameter        | type  | default value | mandatory | description                                                                                                                                                       |
-| ---------------- | ----- | ------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| is_splash_screen | bool  | false         | no        | whether is the splash ads                                                                                                                                         |
-| inventory_types  | int[] | [1]           | yes       | types of material, 1: image, 2: image and text, 3: video, 4: html5 snippet, 5: text, 6: native, 7: html5 URL. by default the value is image if this array is null |
-| ad_type          | int   | 0             | no        | ads type, 0: banner, 1: interstitial, 2: splash, 3: native, 4: rewarded video, 255: unknown                                                                       |
-| tag_name         | string|               | no        | tag name, or called by slot name, ad unit name, etc|
+| parameter        | type   | default value | mandatory | description                                                                                                                                                       |
+| ---------------- | ------ | ------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| is_splash_screen | bool   | false         | no        | whether is the splash ads                                                                                                                                         |
+| inventory_types  | int[]  | [1]           | yes       | types of material, 1: image, 2: image and text, 3: video, 4: html5 snippet, 5: text, 6: native, 7: html5 URL. by default the value is image if this array is null |
+| ad_type          | int    | 0             | yes       | ads type, 0: banner, 1: interstitial, 2: splash, 3: native, 4: rewarded video, 255: unknown                                                                       |
+| tag_name         | string |               | no        | tag name, or called by slot name, ad unit name, etc                                                                                                               |
 
 #### BidRequest.Imp.Banner
 
@@ -262,9 +262,9 @@ There are three steps in RTB processing:
 
 #### BidRequest.Impression.Pmp
 
-| parameter       | type  | default value | mandatory | description                   |
-| --------------- | ----- | ------------- | --------- | ----------------------------- |
-| private_auction | bool  |               | no        | always is true                |
+| parameter       | type  | default value | mandatory | description                          |
+| --------------- | ----- | ------------- | --------- | ------------------------------------ |
+| private_auction | bool  |               | no        | always is true                       |
 | deals           | array |               | yes       | [Deal](#bidrequestimpressionpmpdeal) |
 
 ##### BidRequest.Impression.Pmp.Deal
@@ -343,38 +343,38 @@ There are three steps in RTB processing:
 
 #### BidResponse.SeatBid.Bid
 
-| parameter | type     | default value | mandatory | description                                                                                                                                                                                         |
-| --------- | -------- | ------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| id        | string   |               | yes       | bid ID, generated by DSP                                                                                                                                                                            |
-| impid     | string   |               | yes       | impression ID                                                                                                                                                                                       |
-| price     | double   |               | yes       | bid price, unit is cent, should higher than floor price of request, or will be treated as invalid response. for currently, the currency only support "RMB"                                          |
-| adid      | string   |               | yes       | material ID, is generated by DSP. please guarantee same material ID has same parameters excluding nurl, clkurl, imptrackers and clktrackers.                                                        |
-| nurl      | string   |               | no        | Win notice URL called using GET method by YUMI adx if the bid wins. in this URL, you can use [macro](supported_macros.md). recommend using [impression tracking url](#bidresponseseatbidbidext) to get the win notice.    |
-| bundle    | string   |               | no        | package name or bundle, such an "com.zplay.demo"                                                                                                                                                    |
-| iurl      | string   |               | no        | image URL of creative. this parameter is mandatory when the ad type is banner                                                                                                                       |
-| w         | int32    |               | no        | creative width, this parameter is mandatory when the return ads'size isn't same with the slot size.                                                                                                 |
-| h         | int32    |               | no        | creative height                                                                                                                                                                                     |
-| cat       | string[] |               | no        | advertising category, for reference [IAB §6.1](http://www.iab.net/media/file/OpenRTB_API_Specification_Version2.0_FINAL.PDF)                                                                        |
-| ext       | string   |               | no        | extension of bid                                                                                                                                                                                    |
-| adm       | string   |               | no        | creative, only be used when the ads creative is video. the video must comply with VAST 3.0 specification, for reference [VAST 3.0 specification](http://www.iab.com/wp-content/uploads/2015/06/VASTv3_0.pdf) |
-| AdmOneof  | object   |               | no        | native ads object                                                                                                                                                                                   |
-| dealid    | string   |               | no        | deal id, only be used when the response is PMP model                                                                                                                                                |
+| parameter | type     | default value | mandatory | description                                                                                                                                                                                                            |
+| --------- | -------- | ------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id        | string   |               | yes       | bid ID, generated by DSP                                                                                                                                                                                               |
+| impid     | string   |               | yes       | impression ID                                                                                                                                                                                                          |
+| price     | double   |               | yes       | bid price, unit is cent, should higher than floor price of request, or will be treated as invalid response. for currently, the currency only support "RMB"                                                             |
+| adid      | string   |               | yes       | material ID, is generated by DSP. please guarantee same material ID has same parameters excluding nurl, clkurl, imptrackers and clktrackers.                                                                           |
+| nurl      | string   |               | no        | Win notice URL called using GET method by YUMI adx if the bid wins. in this URL, you can use [macro](supported_macros.md). recommend using [impression tracking url](#bidresponseseatbidbidext) to get the win notice. |
+| bundle    | string   |               | no        | package name or bundle, such an "com.zplay.demo"                                                                                                                                                                       |
+| iurl      | string   |               | no        | image URL of creative. this parameter is mandatory when the ad type is banner                                                                                                                                          |
+| w         | int32    |               | no        | creative width, this parameter is mandatory when the return ads'size isn't same with the slot size.                                                                                                                    |
+| h         | int32    |               | no        | creative height                                                                                                                                                                                                        |
+| cat       | string[] |               | no        | advertising category, for reference [IAB §6.1](http://www.iab.net/media/file/OpenRTB_API_Specification_Version2.0_FINAL.PDF)                                                                                           |
+| ext       | string   |               | no        | extension of bid                                                                                                                                                                                                       |
+| adm       | string   |               | no        | creative, only be used when the ads creative is video. the video must comply with VAST 3.0 specification, for reference [VAST 3.0 specification](http://www.iab.com/wp-content/uploads/2015/06/VASTv3_0.pdf)           |
+| AdmOneof  | object   |               | no        | native ads object                                                                                                                                                                                                      |
+| dealid    | string   |               | no        | deal id, only be used when the response is PMP model                                                                                                                                                                   |
 
 ##### BidResponse.SeatBid.Bid.Ext
 
 | parameter          | type     | default value | mandatory | description                                                                                                                                                                               |
 | ------------------ | -------- | ------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| app_ver            | string   |               | no        | promoted applicaiton version. it's necessary when the promoted product is an application or game.                                                                                          |
-| clkurl             | string   |               | no        | cilck URL. allows to use macros [macro](supported_macros.md), for example, http://www.zplay.cn/ad/{AUCTION_BID_ID}                                                                                  |
-| imptrackers[]      | string[] |               | no        | impression tracking links, allows to list many links, allows to use macros [macro](supported_macros.md)                                                                                             |
-| clktrackers[]      | string[] |               | no        | clicks tracking links, allows to list many links, allows to use macros [macro](supported_macros.md)                                                                                                 |
+| app_ver            | string   |               | no        | promoted applicaiton version. it's necessary when the promoted product is an application or game.                                                                                         |
+| clkurl             | string   |               | no        | cilck URL. allows to use macros [macro](supported_macros.md), for example, http://www.zplay.cn/ad/{AUCTION_BID_ID}                                                                        |
+| imptrackers[]      | string[] |               | no        | impression tracking links, allows to list many links, allows to use macros [macro](supported_macros.md)                                                                                   |
+| clktrackers[]      | string[] |               | no        | clicks tracking links, allows to list many links, allows to use macros [macro](supported_macros.md)                                                                                       |
 | html_snippet       | string   |               | no        | html snippet                                                                                                                                                                              |
 | inventory_type     | int      | 1             | no        | types of material, 1: image, 2: image and text, 3: video, 4: html5 snippet, 5: text, 6: native, 7: html5 url                                                                              |
 | title              | string   |               | no        | title of ads of image and text                                                                                                                                                            |
 | desc               | string   |               | no        | description of ads of image and text                                                                                                                                                      |
 | action             | int      | 1             | no        | types of action, 1: open the clkurl within webview in-app, 2: open the clkurl within system browser, 3: open map, 4: open dial, 5: play video, 6: download App, 7: arouse App             |
 | download_file_name | string   |               | no        | file name of downloaded, it's mandatory when action is 6(download app)                                                                                                                    |
-| fallback_url       | string   |               | no        | jumping url that when arousing app failed, allows to use macros [macro](supported_macros.md), for example, http://www.zplay.cn/ad/{AUCTION_BID_ID}                                                 |
+| fallback_url       | string   |               | no        | jumping url that when arousing app failed, allows to use macros [macro](supported_macros.md), for example, http://www.zplay.cn/ad/{AUCTION_BID_ID}                                        |
 | fallback_action    | int      | 1             | no        | action type of fallback_url, 1: open the clkurl within webview in-app, 2: open the clkurl within system browser, 3: open map, 4: open dial, 5: play video, 6: download App, 7: arouse App |
 
 ##### AdmOneof
@@ -424,11 +424,11 @@ There are three steps in RTB processing:
 
 **NativeResponse.Asset.Link**
 
-| parameter     | type   | default value | mandatory | description                                                                |
-| ------------- | ------ | ------------- | --------- | -------------------------------------------------------------------------- |
+| parameter     | type   | default value | mandatory | description                                                               |
+| ------------- | ------ | ------------- | --------- | ------------------------------------------------------------------------- |
 | url           | string |               | yes       | target URL which is the jumping URL when user tap the corresponding asset |
-| clicktrackers | array  |               | no        | click tracking URL                                                         |
-| ext           | object |               | no        | extension of link                                                          |
+| clicktrackers | array  |               | no        | click tracking URL                                                        |
+| ext           | object |               | no        | extension of link                                                         |
 
 **NativeResponse.Asset.Link.Ext**
 

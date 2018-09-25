@@ -85,7 +85,7 @@ Zplay Adx RTB 总共包含三个步骤。
 | ver       | string |        | 否   | 应用版本                                                                                               |
 | bundle    | string |        | 否   | 为应用包名，例："com.zplay.demo"                                                                       |
 | cat[]     | string |        | 否   | 应用类型，详见[IAB §6.1](http://www.iab.net/media/file/OpenRTB_API_Specification_Version2.0_FINAL.PDF) |
-| publisher | 对象   |        | 否   | [出品方信息](#出品方信息bidrequestsitepublisher)                                                              |
+| publisher | 对象   |        | 否   | [出品方信息](#出品方信息bidrequestsitepublisher)                                                       |
 
 ### 设备信息（BidRequest.Device）
 
@@ -109,7 +109,7 @@ Zplay Adx RTB 总共包含三个步骤。
 | dpidsha1                | string |        | 是   | Android为ANDROID ID SHA1；iOS为ADID(也叫IDFA) SHA1， 例："8a319e9fdf05dd8f571b6e0dc2dc2a8263a6974b"                                                                  |
 | connectiontype          | 枚举   |        | 否   | 网络连接类型，0：未知，1：以太网，2：wifi， 3：未知蜂窝网络， 4：2G网络，5：3G网络，6：4G网络，详见proto文件                                                         |
 | devicetype              | 枚举   |        | 否   | 设备类型，1：移动设备，4：手机，5：平板                                                                                                                              |
-| geo                     | 对象   |        | 否   | [Geo对象](#geo对象bidrequestdevicegeo)，请求设备的经纬度                                                                                                                 |
+| geo                     | 对象   |        | 否   | [Geo对象](#geo对象bidrequestdevicegeo)，请求设备的经纬度                                                                                                             |
 | extensions[plmn]        | string |        | 否   | 国家运营商编号， 例："46000"                                                                                                                                         |
 | extensions[imei]        | string |        | 否   | imei码明文，(cdma手机传meid码)                                                                                                                                       |
 | extensions[imsi]        | string |        | 否   | imsi码明文                                                                                                                                                           |
@@ -147,8 +147,8 @@ Zplay Adx RTB 总共包含三个步骤。
 | tagid                        | string |        | 否   | 广告位id                                                                                                                                              |
 | extensions[is_splash_screen] | bool   | false  | 否   | 是否为开屏广告，true表示开屏，false表示非开屏                                                                                                         |
 | extensions[inventory_types]  | int[]  | [1]    | 是   | 支持的素材类型数组，1：图片，2：图文，3：视频，4：html5，5：文本，6：原生， 7：html5 url，即一个指向html5素材页面的url。如果为空，则默认只支持1：图片 |
-| extensions[ad_type]          | int    | 0      | 否   | 广告类型，0：banner，1：插屏，2：开屏，3：原生，4：视频；255：unknown |
-| extensions[tag_name]         | string |        | 否   | 广告位名称|
+| extensions[ad_type]          | int    | 0      | 是   | 广告类型，0：banner，1：插屏，2：开屏，3：原生，4：视频；255：unknown                                                                                 |
+| extensions[tag_name]         | string |        | 否   | 广告位名称                                                                                                                                            |
 
 #### 横幅信息（BidRequest.Impression.Banner）
 
@@ -210,9 +210,9 @@ Zplay Adx RTB 总共包含三个步骤。
 
 #### Pmp对象（BidRequest.Impression.Pmp）
 
-| 字段名称        | 类型  | 默认值 | 必须 | 描述                                      |
-| --------------- | ----- | ------ | ---- | ----------------------------------------- |
-| private_auction | bool  |        | 否   | 始终为true                                |
+| 字段名称        | 类型  | 默认值 | 必须 | 描述                                                 |
+| --------------- | ----- | ------ | ---- | ---------------------------------------------------- |
+| private_auction | bool  |        | 否   | 始终为true                                           |
 | deals           | array |        | 是   | [Deal对象](#deal对象bidrequestimpressionpmpdeal)数组 |
 
 ##### Deal对象（BidRequest.Impression.Pmp.Deal）
@@ -226,13 +226,13 @@ Zplay Adx RTB 总共包含三个步骤。
 
 ### 用户信息（BidRequest.User）
 
-| 字段名称 | 类型   | 默认值 | 必须 | 描述                                             |
-| -------- | ------ | ------ | ---- | ------------------------------------------------ |
-| id       | string |        | 否   | 用户id                                           |
-| yob      | int32  |        | 否   | 生日年份，例：1995                               |
-| gender   | string |        | 否   | 男："M"， 女："F"， 其他："0"                    |
+| 字段名称 | 类型   | 默认值 | 必须 | 描述                                                 |
+| -------- | ------ | ------ | ---- | ---------------------------------------------------- |
+| id       | string |        | 否   | 用户id                                               |
+| yob      | int32  |        | 否   | 生日年份，例：1995                                   |
+| gender   | string |        | 否   | 男："M"， 女："F"， 其他："0"                        |
 | geo      | 对象   |        | 否   | [Geo对象](#geo对象bidrequestdevicegeo)，用户家庭位置 |
-| data[]   | 对象   |        | 否   | Data对象，用户的扩展信息                         |
+| data[]   | 对象   |        | 否   | Data对象，用户的扩展信息                             |
 
 #### 用户扩展信息（BidRequest.User.Data）
 
@@ -262,7 +262,7 @@ Zplay Adx RTB 总共包含三个步骤。
 | search     | string   |        | 否   | 当前页面的搜索关键词来源                                                                                   |
 | mobile     | bool     | true   | 否   | 是否对移动端浏览效果做过优化，false：未做优化；true：做过优化                                              |
 | keywords   | string   |        | 否   | 网页关键字，可多个，逗号隔离                                                                               |
-| publisher  | 对象     |        | 否   | [出品方信息](#出品方信息bidrequestsitepublisher)                                                                  |
+| publisher  | 对象     |        | 否   | [出品方信息](#出品方信息bidrequestsitepublisher)                                                           |
 
 #### 出品方信息（BidRequest.Site.Publisher）
 
@@ -297,7 +297,7 @@ Zplay Adx RTB 总共包含三个步骤。
 | impid                          | string   |        | 是   | 曝光id                                                                                                                                                                                                    |
 | price                          | double   |        | 是   | 出价，单位为分，不能低于曝光最低价格，否则会被当做无效应答。目前只支持人民币                                                                                                                              |
 | adid                           | string   |        | 是   | 物料ID，由DSP提供。DSP必须保证如果adid相同，则物料的所有字段相同（除了nurl、clkurl、imptrackers、clktrackers）。如果DSP提供的adid满足以下条件会受到惩罚：1、提交过多不同的adid；2、相同adid的其他字段不同 |
-| nurl                           | string   |        | 否   | 竞价获胜通知url，win notice url， GET方法调用。可以使用[宏](supported_macros.md)。推荐使用"extensions[imptrackers][]"来获取获胜通知。                                                                          |
+| nurl                           | string   |        | 否   | 竞价获胜通知url，win notice url， GET方法调用。可以使用[宏](supported_macros.md)。推荐使用"extensions[imptrackers][]"来获取获胜通知。                                                                     |
 | bundle                         | string   |        | 否   | 为应用包名，例：“com.zplay.demo”                                                                                                                                                                        |
 | iurl                           | string   |        | 否   | 广告素材的图片URL。banner广告必填                                                                                                                                                                         |
 | w                              | int32    |        | 否   | 素材宽度， 当给出的广告素材尺寸与广告 位尺寸不完全一致时，素材宽高信息必须给出。                                                                                                                          |
@@ -307,16 +307,16 @@ Zplay Adx RTB 总共包含三个步骤。
 | native                         | 对象     |        | 否   | 原生广告对象                                                                                                                                                                                              |
 | dealid                         | string   |        | 否   | deal id，只有在pmp交易时才需要                                                                                                                                                                            |
 | extensions[app_ver]            | string   |        | 否   | app推广广告的话，需要提供app的版本号                                                                                                                                                                      |
-| extensions[clkurl]             | string   |        | 否   | 广告点击跳转地址，允许使用[宏](supported_macros.md)，例http://www.zplay.cn/ad/{AUCTION_BID_ID}                                                                                                                     |
-| extensions[imptrackers][]      | string[] |        | 否   | 曝光追踪地址，允许有多个追踪地址，允许使用[宏](supported_macros.md)                                                                                                                                                |
-| extensions[clktrackers][]      | string[] |        | 否   | 点击追踪地址，允许有多个追踪地址，允许使用[宏](supported_macros.md)                                                                                                                                                |
+| extensions[clkurl]             | string   |        | 否   | 广告点击跳转地址，允许使用[宏](supported_macros.md)，例http://www.zplay.cn/ad/{AUCTION_BID_ID}                                                                                                            |
+| extensions[imptrackers][]      | string[] |        | 否   | 曝光追踪地址，允许有多个追踪地址，允许使用[宏](supported_macros.md)                                                                                                                                       |
+| extensions[clktrackers][]      | string[] |        | 否   | 点击追踪地址，允许有多个追踪地址，允许使用[宏](supported_macros.md)                                                                                                                                       |
 | extensions[html_snippet]       | string   |        | 否   | html广告代码                                                                                                                                                                                              |
 | extensions[inventory_type]     | int      | 1      | 否   | 广告资源类型， 1：图片，2：图文，3：视频，4：html5，5：文本， 6：原生， 7：html5 url， 即一个指向html5素材页面的url                                                                                       |
 | extensions[title]              | string   |        | 否   | 图文广告中的标题                                                                                                                                                                                          |
 | extensions[desc]               | string   |        | 否   | 图文广告中的描述                                                                                                                                                                                          |
 | extensions[action]             | int      | 1      | 否   | 广告动作类型， 1： 在app内webview打开目标链接， 2： 在系统浏览器打开目标链接， 3：打开地图，4： 拨打电话，5：播放视频，6：App下载                                                                         |
 | extensions[download_file_name] | string   |        | 否   | 下载文件名，动作类型为下载类型时需要                                                                                                                                                                      |
-| extensions[fallback_url]       | string   |        | 否   | 应用唤醒失败后的打开地址，允许使用[宏](supported_macros.md)，例http://www.zplay.cn/ad/{AUCTION_BID_ID}                                                                                                             |
+| extensions[fallback_url]       | string   |        | 否   | 应用唤醒失败后的打开地址，允许使用[宏](supported_macros.md)，例http://www.zplay.cn/ad/{AUCTION_BID_ID}                                                                                                    |
 | extensions[fallback_action]    | int      | 1      | 否   | fallback_url的动作类型，1：在app内webview打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App下载；7：应用唤醒                                                        |
 
 ##### 原生广告Native（NativeResponse）
