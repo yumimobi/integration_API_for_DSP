@@ -42,7 +42,8 @@
 	                    4,
 	                    5
 	                ],
-	            "ad_type":0
+	            "ad_type":0,
+				"tag_name":"广告位名称"
 	            }
 	        }
 	    ],
@@ -165,7 +166,8 @@
 	                "inventory_types": [
 	                    1
 	                ],
-	                "ad_type":1
+	                "ad_type":1,
+					"tag_name":"广告位名称"
 	            }
 	        }
 	    ],
@@ -334,7 +336,8 @@
 	                "inventory_types": [
 	                    6
 	                ],
-	                "ad_type":3
+	                "ad_type":3,
+					"tag_name":"广告位名称"
 	            }
 	        }
 	    ],
