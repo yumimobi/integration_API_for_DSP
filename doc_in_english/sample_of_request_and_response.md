@@ -141,6 +141,53 @@
 	}
 ```
 
+
+### deeplink response of banner, other types are similar to this.
+
+```json
+
+	{
+	    "id": "0bts0K1CQgtF0zJA6R1ZzppG4CJ3b4",
+	    "seatbid": [
+	        {
+	            "bid": [
+	                {
+	                    "id": "27170321175320259213",
+	                    "impid": "27170321175320259213",
+	                    "price": 0.1,
+	                    "adid": "ac990ea25bca7474c2553679e3dd33c6",
+	                    "w": 640,
+	                    "h": 100,
+	                    "iurl": "http://img.pxene.com/dav/65d106ff-2cb9-4ae7-a2d8-897fe3f05f64/image/37f5e37fb84945bcb4f29bdb6dbce990.jpg",
+	                    "adm": "",
+	                    "ext": {
+	                        "clkurl": "taobao://item.taobao.com/item.htm?id=44014690052",
+	                        "imptrackers": [
+	                            "http://sapi.wobile.com/phone/notify.php?act=show&log=dspid%3D101%26uniplayid%3D1636400010%26rid%3D27170321175320259213%26adiplay.6%3D1%26slotd%3Dbanner%26ads%3D640x100%26sdkv%3D6%26ts%3D14900900%26ip%3D183.16.2.121",
+	                            "http://open.aview.cn/agent/openDisplay.do?st=0&uuidEncType=0&sv=0&b4790f0cc46f1fdd6facee9bc1845&aid=SDK201616090411451r7ykol3qo7e0ou&ro=1&ca=0",
+	                            "http://ip2.pxene.comapid=d2495550-d1a0-4fde-81d4-fdc634451a36&depid=e1aa0807c3d23e49311b73a3580dd77a&nw=1&os=2&tp=1&reqip=183.16.2.121&gp=1156440300&mb=3&op=1&md=MI+3",
+	                            "http://g.cn.miaozhen.com/x/k=2038947&p=75Y7B&dx=__IPDX__&rt=2&ns=183.16.2.1__IESID__&v=__LOC__&xa=__ADPLATFORM__&mo=0&m0=__OPE006479b824d9a1fd&m2=b2196f839dae8187e6b2c1931ca847f6&m4=__AAID__&m5=__IDFA__&m6=__MAC1__&m6a=__MAC__&o="
+	                        ],
+	                        "clktrackers": [
+	                            "http://api.wanzhu.SDK201616090411451r7ykol3qo7e0ou%26wzid%3D1010009%26pkg%3Dcom.zplay.migupopstar.mi%26did%3D5c8ade2b7a03613126opt%3D46000%26plt%3D1%26slotid%3Dbanner%26ax100%26sdkv%3D6%26ts%3D1490090000%26ip%3D183.16.2.121",
+	                            "http://open.advew.cn/aid=SDK201616090411451r7ykol3qo7e0ou&ro=1&ca=0",
+	                            "http://cl2.pxene.com/ic?adx=14&bid=20170321-175320_bidreq_130-1030-NGzw-591&mtype=c&mapid=d2495550-d1a0-4fde-81d4-fdc6344dtype=97&appi23e49311b73a3580dd77a&nw=1&os=2&tp=1&reqip=183.16.2.121&gp=1156440300&mb=3&op=1&md=MI+3&url="
+	                        ],
+	                        "title": "",
+	                        "desc": "",
+	                        "action": 7,
+	                        "html_snippet": "",
+	                        "inventory_type": 1,
+							"fallback_url":"http://e.cn.mozhen.com/r/k=2038947&p=75Y7B&dx=__IPDX__&rt=2&ns=183.16.2.121&ni=__IESID__&v=__LOC__&xa=__ADPLATFORM__&ro=sm&mo=0&m479b824d9a1fd&m2=b2196f839dae8187e6b2c1931ca847f6&m4=__AAID__&m5=__IDFA__&m6=__MAC1__&m6a=__MAC__&o=http://site.pxene.com/minisiteWap/Accord_3h/",
+							"fallback_action": 2
+	                    }
+	                }
+	            ]
+	        }
+	    ]
+	}
+```
+
 ## interstitial
 
 ### request of interstitial
