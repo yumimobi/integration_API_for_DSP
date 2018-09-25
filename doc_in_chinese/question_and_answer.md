@@ -42,4 +42,6 @@ A: 有两种方法判断：
 
 - instl 为 false 则是普通 banner， 即 instl=false banner；
 
-2. 读取 BidRequest.Imp.Ext.ad_type 字段，根据该字段的值确定广告位类型，0：banner，1：插屏，2：开屏，3：原生，4：视频；255：unknown。
+2. 根据 BidRequest.Imp.Ext.ad_type 字段进行判断
+
+   根据该字段的值确定广告位类型，0：banner，1：插屏，2：开屏，3：原生，4：视频；255：unknown。

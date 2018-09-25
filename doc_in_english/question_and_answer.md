@@ -32,10 +32,10 @@ A: there are two ways to judge:
 
 1. excluding method
 
-    The slot type is rewarded video as long as there has video object in request or is native as long as there has native object in request.
+   The slot type is rewarded video as long as there has video object in request or is native as long as there has native object in request.
 
-    If not, the slot type depends on the parameter instl that is in imp object. If the instl and IsSplashScreen are both true, the slot type is splash; if the instl is true and IsSplashScreen is false, th slot type is interstitial.
+   If not, the slot type depends on the parameter instl that is in imp object. If the instl and IsSplashScreen are both true, the slot type is splash; if the instl is true and IsSplashScreen is false, th slot type is interstitial.
 
-    if instl is false, the slot type is banner.
+   if instl is false, the slot type is banner.
 
 2. judge ad_type according the value of parameter `BidRequest.Imp.Ext.ad_type`, 0:banner, 1:interstitial, 2:splash, 3:native, 4:rewarded video; 255:unknown.
