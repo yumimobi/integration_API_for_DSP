@@ -265,7 +265,7 @@
     {
     	"ret":0,
     	"msg":"",
-    	"stat_info":StatInfo
+    	"stat_info":"StatInfo"
     }
 ```
 

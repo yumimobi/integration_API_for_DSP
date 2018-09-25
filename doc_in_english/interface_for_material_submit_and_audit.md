@@ -47,7 +47,7 @@
     {
         "dsp_token": "d52b426d8d5a4adeb998f1ba0b290014",
         "ad_id": "adid_g72",
-        "ad_type": 4,``
+        "ad_type": 4,
         "ad_size":"320x50",
         "client_name": "client_32",
         "target_url": "http://target.com/FfAB",
@@ -257,7 +257,7 @@
     {
         "ret":0,
         "msg":"",
-        "stat_info":StatInfo
+        "stat_info":"StatInfo"
     }
 ```
 
