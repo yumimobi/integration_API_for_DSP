@@ -356,9 +356,9 @@ There are three steps in RTB processing:
 | ------------- | ------ | ------------- | --------- | ------------------------------------------------------------------------- |
 | url           | string |               | yes       | target URL which is the jumping URL when user tap the corresponding asset |
 | clicktrackers | array  |               | no        | click tracking URL                                                        |
-
-| extensions[link_type] | int    |               | 是        | types of link, 1: open the clkurl within webview in-app, 2: open the clkurl within system browser, 3: open map, 4: open dial, 5: play video, 6: download App, 7: arouse App |
-
+| fallback      | string |               | no        | jumping url that when arousing app failed, allows to use macros [macro](supported_macros.md), for example, http://www.zplay.cn/ad/{AUCTION_BID_ID} |
+| extensions[link_type]  | int |         | no        | types of link, 1: open the clkurl within webview in-app, 2: open the clkurl within system browser, 3: open map, 4: open dial, 5: play video, 6: download App, 7: arouse App |
+| extensions[fallback_url_action]|int| 1  |no         |action type of fallback_url, 1: open the clkurl within webview in-app, 2: open the clkurl within system browser, 3: open map, 4: open dial, 5: play video, 6: download App, 7: arouse App |
 ## Win Notice
 
 sending the billable info to DSP that win the auction through substitute the macro of imptrackers.

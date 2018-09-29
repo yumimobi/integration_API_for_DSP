@@ -428,6 +428,7 @@ There are three steps in RTB processing:
 | ------------- | ------ | ------------- | --------- | ------------------------------------------------------------------------- |
 | url           | string |               | yes       | target URL which is the jumping URL when user tap the corresponding asset |
 | clicktrackers | array  |               | no        | click tracking URL                                                        |
+| fallback      | string |               | no        | jumping url that when arousing app failed, allows to use macros [macro](supported_macros.md), for example, http://www.zplay.cn/ad/{AUCTION_BID_ID} |
 | ext           | object |               | no        | extension of link                                                         |
 
 **NativeResponse.Asset.Link.Ext**
@@ -435,6 +436,7 @@ There are three steps in RTB processing:
 | parameter | type | default value | mandatory | description                                                                                                                                                              |
 | --------- | ---- | ------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | link_type | int  |               | no        | action type of target url, 1: open the clkurl within webview in-app, 2: open the clkurl within system browser, 3: open map, 4: open dial, 5: play video, 6: download App |
+| fallback_action    | int      |             | no        | action type of fallback_url, 1: open the clkurl within webview in-app, 2: open the clkurl within system browser, 3: open map, 4: open dial, 5: play video, 6: download App, 7: arouse App |
 
 ## Win Notice
 
