@@ -36,7 +36,10 @@ extend zadx.BidRequest.Imp {
 
     // 广告类型，0:banner，1:插屏，2:开屏，3:原生，4:视频
     optional int32 ad_type = 202;
-}
+    
+    // 广告位名称，tagid为广告位ID
+    optional string tag_name = 203;
+    }
 
 extend zadx.BidRequest.Device {
     // 国家运营商编号
@@ -89,7 +92,7 @@ extend zadx.BidResponse.SeatBid.Bid {
   // 图文广告中的描述
   optional string desc = 207;
 
-  // 广告动作类型， 1: 在app内webview打开目标链接， 2： 在系统浏览器打开目标链接, 3：打开地图，4： 拨打电话，5：播放视频, 6:App下载
+  // 广告动作类型， 1: 在app内webview打开目标链接， 2： 在系统浏览器打开目标链接, 3：打开地图，4： 拨打电话，5：播放视频, 6:App下载, 7:deeplink唤醒
   optional int32 action = 208;
 
   // 下载文件名，动作类型为下载类型时需要
@@ -99,12 +102,24 @@ extend zadx.BidResponse.SeatBid.Bid {
   repeated string play_start_trackers = 210;
   // 可玩式广告的结束播放追踪链接
   repeated string play_end_trackers = 211;
+  
+  // 唤醒链接失败后调用的该url跳转
+  optional string fallback_url = 212;
+
+  // fallback_url对应的点击操作类型,1: 在app内webview打开目标链接， 2： 在系统浏览器打开目标链接, 3：打开地图，4： 拨打电话，5：播放视频, 6:App下载
+  optional int32 fallback_action = 213;
 }
 
 extend zadx.NativeResponse.Link {
-  // 链接动作类型, 1: 在app内webview打开目标链接， 2： 在系统浏览器打开目标链接, 3：打开地图，4： 拨打电话，5：播放视频, 6:App下载
+  // 链接动作类型, 1: 在app内webview打开目标链接， 2： 在系统浏览器打开目标链接, 3：打开地图，4： 拨打电话，5：播放视频, 6:App下载, 7:deeplink唤醒
   optional int32 link_type = 200;
-}
+
+  // 唤醒链接失败后调用的该url跳转
+  optional string fallback = 201;
+
+  // fallback_url对应的点击操作类型,1: 在app内webview打开目标链接， 2： 在系统浏览器打开目标链接, 3：打开地图，4： 拨打电话，5：播放视频, 6:App下载
+  optional int32 fallback_url_action = 202;
+  }
 
 
 

@@ -367,7 +367,7 @@ Zplay Adx RTB 总共包含三个步骤：
 | action             | int      | 1      | 否   | 广告动作类型，1：在app内webview打开目标链接，2：在系统浏览器打开目标链接， 3：打开地图，4：拨打电话，5：播放视频， 6：App下载，7：应用唤醒         |
 | download_file_name | string   |        | 否   | 下载文件名，动作类型为下载类型时需要                                                                                                               |
 | fallback_url       | string   |        | 否   | 应用唤醒失败后的打开地址，允许使用[宏](supported_macros.md)，例http://www.zplay.cn/ad/{AUCTION_BID_ID}                                             |
-| fallback_action    | int      | 1      | 否   | fallback_url的动作类型，1：在app内webview打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App下载；7：应用唤醒 |
+| fallback_action    | int      | 1      | 否   | fallback_url的动作类型，1：在app内webview打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App下载，7：应用唤醒 |
 
 **原生广告AdmOneof**
 
@@ -423,12 +423,15 @@ Zplay Adx RTB 总共包含三个步骤：
 | url           | string |        | 是   | 点击URL            |
 | clicktrackers | array  |        | 否   | 点击跟踪URL        |
 | ext           | object |        | 否   | 原声广告Link的扩展 |
+| fallback  | string |        | 否   | 应用唤醒失败后的打开地址，允许使用[宏](supported_macros.md)，例http://www.zplay.cn/ad/{AUCTION_BID_ID}|
+
 
 **原生广告Link扩展（NativeResponse.Asset.Link.Ext)**
 
 | 字段名称  | 类型 | 默认值 | 必须 | 描述                                                                                                                               |
 | --------- | ---- | ------ | ---- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| link_type | int  |        | 否   | 广告动作类型， 1： 在app内webview打开目标链接， 2： 在系统浏览器打开目标链接， 3：打开地图，4： 拨打电话，5：播放视频， 6：App下载 |
+| link_type | int  |        | 否   | 广告动作类型， 1： 在app内webview打开目标链接， 2： 在系统浏览器打开目标链接， 3：打开地图，4： 拨打电话，5：播放视频， 6：App下载 ，7：应用唤醒|
+| fallback_action | int  | 1      | 否   | fallback_url的动作类型，1：在app内webview打开目标链接，2：在系统浏览器打开目标链接，3：打开地图，4：拨打电话，5：播放视频，6：App下载，7：应用唤醒 |
 
 ## 向DSP发送的竞价结果接口(Win Notice)
 
