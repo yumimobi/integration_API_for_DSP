@@ -3,7 +3,7 @@
 |            字段           |                                         含义                                         |
 | ------------------------- | ------------------------------------------------------------------------------------ |
 | {AUCTION_BID_ID}          | 竞价ID                                                                               |
-| {AUCTION_BID_PRICE}       | 最终结算价格，该价格是被加密的，解密方法请参见[结算价格解析方法](/price_decryption_method.md) |
+| {AUCTION_BID_PRICE}       | 最终结算价格，该价格是被加密的，解密方法请参见[结算价格解析方法](/doc_in_chinese/price_decryption_method.md) |
 | {AUCTION_BID_PRICE_NOENC} | 最终结算价格，明文                                                                   |
 | {AUCTION_IMP_ID}          | 曝光id                                                                               |
 | {AUCTION_IP}              | 用户ip                                                                               |
