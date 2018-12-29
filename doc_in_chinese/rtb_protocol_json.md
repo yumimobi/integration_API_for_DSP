@@ -163,7 +163,7 @@ Zplay Adx RTB 总共包含三个步骤：
 | 字段名称         | 类型   | 默认值 | 必须 | 描述                                                                                                                                                     |
 | ---------------- | ------ | ------ | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | is_splash_screen | bool   | false  | 否   | 是否为开屏广告，true表示开屏，false表示非开屏                                                                                                            |
-| inventory_types  | int[]  | [1]    | 是   | 支持的素材类型数组， 1：图片，2：图文，3：视频，4：html5，5：文本， 6：原生， 7：html5 URL， 即一个指向html5素材页面的URL。如果为空，则默认只支持1：图片 |
+| inventory_types  | int[]  | [1]    | 是   | 支持的素材类型数组， 1：图片，2：图文，3：视频，4：html5，5：文本，6：原生，7：html5 URL，即一个指向html5素材页面的URL，10：可玩广告。 如果为空，则默认只支持1：图片 |
 | ad_type          | int    | 0      | 是   | 广告类型，0：banner，1：插屏，2：开屏，3：原生，4：视频；255：unknown                                                                                    |
 | tag_name         | string |        | 否   | 广告位名称                                                                                                                                               |
 #### 横幅信息（BidRequest.Imp.Banner）
@@ -361,7 +361,7 @@ Zplay Adx RTB 总共包含三个步骤：
 | imptrackers[]      | string[] |        | 否   | 曝光追踪地址，允许有多个追踪地址，允许使用[宏](supported_macros.md)                                                                                |
 | clktrackers[]      | string[] |        | 否   | 点击追踪地址，允许有多个追踪地址，允许使用[宏](supported_macros.md)                                                                                |
 | html_snippet       | string   |        | 否   | html广告代码                                                                                                                                       |
-| inventory_type     | int      | 1      | 否   | 广告资源类型， 1：图片，2：图文，3：视频 ，4：html5，5：文本， 6：原生， 7：html5 url，即一个指向html5素材页面的url                                |
+| inventory_type     | int      | 1      | 否   | 广告资源类型， 1：图片，2：图文，3：视频，4：html5，5：文本，6：原生，7：html5 url，即一个指向html5素材页面的url，10：可玩广告                               |
 | title              | string   |        | 否   | 图文广告中的标题                                                                                                                                   |
 | desc               | string   |        | 否   | 图文广告中的描述                                                                                                                                   |
 | action             | int      | 1      | 否   | 广告动作类型，1：在app内webview打开目标链接，2：在系统浏览器打开目标链接， 3：打开地图，4：拨打电话，5：播放视频， 6：App下载，7：应用唤醒         |
