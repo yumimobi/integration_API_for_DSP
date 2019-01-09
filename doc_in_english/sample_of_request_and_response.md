@@ -10,6 +10,7 @@
 	- [interstitial](#interstitial)
 		- [request of interstitial](#request-of-interstitial)
 		- [response of interstitial](#response-of-interstitial)
+		- [response of interstitial video](#response-of-interstitial-video)
 	- [native](#native)
 		- [request of native](#request-of-native)
 		- [response of native](#response-of-native)
@@ -201,7 +202,7 @@
       "bidfloorcur": "CNY",
       "ext": {
         "is_splash_screen": true,
-        "inventory_types": [1],
+        "inventory_types": [1,2,3,4,5,7],
         "ad_type": 1,
         "tag_name": "popstar"
       }
@@ -293,6 +294,50 @@
       ]
     }
   ]
+}
+```
+
+
+### response of interstitial video
+
+```json
+{
+    "id": "0bsZ061CQfE403tMax38YlB71cvWlH",
+    "seatbid": [
+        {
+            "bid": [
+                {
+                    "id": "3e56c4f0b81b470196f671c96e1be5d9",
+                    "impid": "1",
+                    "price": 1100,
+                    "adid": "370",
+                    "nurl": "http://dsptrack.ad-ex.com/winnotice?requestid=0bsZ061CQfE403tMax38YlB71cvWlH&adgr104.108.146&app_name=VLife&material_type=banner",
+                    "adomain": [
+                        "http://www.adidas.com.cn/"
+                    ],
+                    "bundle": "",
+                    "iurl": "http://res.ad-mex.com/dspres/upload/20170307/88b58192-c86a-43dc-a4c2-69a5bd84f820.jpg",
+                    "cid": "18",
+                    "crid": "370",
+                    "w": 640,
+                    "h": 960,
+                    "adm": "<VAST version=\"3.0\"><VAST version=\"2.0\"><Ad id=\"12345\"><InLine><AdSystem version=\"1.0\">samplechange</AdSystem><AdTitle><![CDATA[Sample VAST]]></AdTitle><Impression>http://sample.com</Impression><Description><![CDATA[A sample VAST feed]]></Description><Creatives><Creative sequence=\"1\" id=\"1\"><Linear><Duration>00:00:30</Duration><TrackingEvents><Tracking event=\"start\">https://start.1</Tracking><Tracking event=\"complete\">https://complete.1</Tracking></TrackingEvents><VideoClicks><ClickThrough><![CDATA[http://click.1]]></ClickThrough></VideoClicks><MediaFiles><MediaFile delivery=\"progressive\" bitrate=\"256\" width=\"640\" height=\"480\" type=\"video/mp4\"><![CDATA[http://sample.com/video.mp4]]></MediaFile></MediaFiles></Linear></Creative></Creatives></InLine></Ad></VAST>",
+                    "ext": {
+                        "imptrackers": [
+                            "http://g.cn.miazhen.com/x/k=2039081&p=75VMG&dx=__IPDX__&rt=2&ns=223.104.108.146&ni=__IESID__&v=__LOC__&xa=__ADPLATFORM__&mo=0&m0=__OPENUDID__&m0a=__DUID__&m1=bbd424977f85c210&m1a=__ANDROIDID__&m2=0f11e9b670e033f52da2e3a910523cf0&m4=__AAID__&m5=__IDFA__&m6=__MAC1__&m6a=__MAC__&o=",
+                            "http://dsptrack.ad-mex.com/adImp?requestid=0bsZ061CQfE403tMax38YlB71cvWlvlife&ip=223.104.108.146&app_name=VLife&material_type=banner&price={AUCTION_BID_PRICE}"
+                        ],
+                        "clktrackers": [
+                            "http://e.cn.miazhen.com/r/k=2039081&p=75VMG&dx=__IPDX__&rt=2&ns=__IP__&ni=__IESID__&v=__LOC__&xa=__ADPLATFORM__&vo=32d0b8d2a&vr=2&o=http%3A%2F%2Fad.yoho.cn%2Fhtml5%2F2017%2F02%2Fadidas%2Findex.html",
+                            "http://dsptrackhp=223.104.108.146&app_name=VLife&material_type=banner"
+                        ],
+                        "clkurl": "http://ad.yoho1.cn/html5/2017/02/adidas/index.html",
+                        "inventory_type": 3
+                    }
+                }
+            ]
+        }
+    ]
 }
 ```
 
@@ -479,8 +524,6 @@
 	        <Creative id="14921137" AdID="14921137" sequence="1">
 	          <Linear>
 	            <Duration>00:00:12</Duration>
-	            ..
-	              //duration is needed to positive integer
 	            <MediaFiles>
 	              <MediaFile id="14921137"><![CDATA[ http://live.us.sinaimg.cn/002qTVxrjx074BMTTYSI010401000rFi0k01.mp4 ]]></MediaFile>
 	            </MediaFiles>
