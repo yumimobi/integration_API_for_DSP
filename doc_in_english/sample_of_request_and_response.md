@@ -471,10 +471,22 @@
           "AdmOneof": {
             "AdmNative": {
               "assets": [
-                {
-                  "id": 0,
+                 {
+                  "id": 3,
                   "img": {
                     "url": "http://img.momocdn.com/ad/F4/17/F417956B-85EF-4CA2-A033-EA8FF0897B54_L.jpg"
+                  }
+                },
+                {
+                  "id": 2,
+                  "img": {
+                    "url": "http://img.momocdn.com/ad/F4/17/F417956B-85EF-4CA2-A033-EA8FF0897B54_L.jpg"
+                  }
+                },
+                 {
+                  "id": 4,
+                  "data": {
+                    "value": "desc value etc"
                   }
                 },
                 {
