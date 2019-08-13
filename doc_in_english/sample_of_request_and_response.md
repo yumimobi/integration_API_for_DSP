@@ -16,8 +16,8 @@
 		- [response of native](#response-of-native)
 	- [rewarded video](#rewarded-video)
 		- [adm response of rewarded video](#adm-response-of-rewarded-video)
-    - [request of rewarded video](#request-of-rewarded-video)
-    - [response of rewarded video](#response-of-rewarded-video)
+		- [request of rewarded video](#request-of-rewarded-video)
+		- [response of rewarded video](#response-of-rewarded-video)
 
 ## banner
 
