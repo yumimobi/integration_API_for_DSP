@@ -15,7 +15,9 @@
 		- [原生请求示例](#%E5%8E%9F%E7%94%9F%E8%AF%B7%E6%B1%82%E7%A4%BA%E4%BE%8B)
 		- [原生返回示例](#%E5%8E%9F%E7%94%9F%E8%BF%94%E5%9B%9E%E7%A4%BA%E4%BE%8B)
 	- [激励视频](#%E6%BF%80%E5%8A%B1%E8%A7%86%E9%A2%91)
-		- [激励视频返回示例](#%E6%BF%80%E5%8A%B1%E8%A7%86%E9%A2%91%E8%BF%94%E5%9B%9E%E7%A4%BA%E4%BE%8B)
+		- [激励视频adm返回示例](#激励视频返回adm参数示例)
+    - [激励视频请求示例](#激励视频请求示例)
+    - [激励视频返回示例](#激励视频返回示例)
 
 ## banner
 
@@ -523,7 +525,7 @@
 
 ## 激励视频
 
-### 激励视频返回示例
+### 激励视频返回adm参数示例
 
 > 视频请求的 inventory_type=3；需要返回 vast 视频和展示图片两部分，展示图片可在 iurl 或者 html_snippet 返回。这里简单给出 adm 的 vast 示例，
 
@@ -551,4 +553,124 @@
 	    </InLine>
 	  </Ad>
 	</VAST>
+```
+
+
+### 激励视频请求示例
+
+```json
+{
+  "id": "0bum1K1CQfE62Ae9r23W91zl4bip18",
+  "imp": [
+    {
+      "id": "1",
+      "instl": false,
+      "tagid": "zapf7e40c242176f01fd5db1af86146a6de00dde23b",
+      "bidfloor": 800,
+      "bidfloorcur": "CNY",
+      "video":{
+        "mimes":["video/mp4"],
+        "protocols":[3],
+        "minduration": 5,
+        "maxduration": 15,
+        "w": 640,
+        "h": 960,
+        "pos": 7,
+      },
+      "ext": {
+        "is_splash_screen": false,
+        "inventory_types": [3],
+        "ad_type": 4,
+        "tag_name": "激励视频广告位名称"
+      }
+    }
+  ],
+  "app": {
+    "id": "1007875",
+    "name": "QueryViolations",
+    "ver": "",
+    "bundle": "cn.eclicks.wzsearch"
+  },
+  "device": {
+    "dnt": false,
+    "ua": "Mozilla/5.0(Linux;Android6.0.1;OPPOR9sBuild/MMB29M;wv)AppleWebKit/537.36(KHTML,likeGecko)Version/4.0Chrome/46.0.2490.76MobileSafari/537.36",
+    "ip": "117.173.83.146",
+    "geo": {
+      "lat": 31.359089,
+      "lon": 103.49656,
+      "country": "CHN",
+      "region": "四川",
+      "city": "成都",
+      "type": 2,
+      "ext": {
+        "accu": 0
+      }
+    },
+    "didsha1": "88206dfa4841569b3b61f27a3775d030cd6104c2",
+    "dpidsha1": "1592348a810c27d651b5ef8290e50e7514da2502",
+    "make": "",
+    "model": "OPPOR9s",
+    "os": "android",
+    "osv": "6.0.1",
+    "w": 1080,
+    "h": 1920,
+    "ppi": 480,
+    "connectiontype": 2,
+    "devicetype": 4,
+    "macsha1": "c1976429369bfe063ed8b3409db7c7e7d87196d9",
+    "ext": {
+      "plmn": "46001",
+      "imei": "864083031808612",
+      "imsi": "",
+      "mac": "02:00:00:00:00:00",
+      "android_id": "705cce10d9d051a8",
+      "adid": "",
+      "orientation": 1
+    }
+  },
+  "ext": {
+    "version": 1,
+    "need_https": false
+  }
+}
+```
+
+### 激励视频返回示例
+
+```json
+{
+    "id": "0bsZ061CQfE403tMax38YlB71cvWlH",
+    "seatbid": [
+        {
+            "bid": [
+                {
+                    "id": "3e56c4f0b81b470196f671c96e1be5d9",
+                    "impid": "1",
+                    "price": 1100,
+                    "adid": "370",
+                    "nurl": "http://dsptrack.ad-ex.com/winnotice?requestid=0bsZ061CQfE403tMax38YlB71cvWlH&adgr104.108.146&app_name=VLife&material_type=video",
+                    "bundle": "",
+                    "iurl": "http://res.ad-mex.com/dspres/upload/20170307/88b58192-c86a-43dc-a4c2-69a5bd84f820.jpg",
+                    "cid": "18",
+                    "crid": "370",
+                    "w": 640,
+                    "h": 960,
+                    "adm": "<VAST version=\"3.0\"><VAST version=\"2.0\"><Ad id=\"12345\"><InLine><AdSystem version=\"1.0\">samplechange</AdSystem><AdTitle><![CDATA[Sample VAST]]></AdTitle><Impression>http://sample.com</Impression><Description><![CDATA[A sample VAST feed]]></Description><Creatives><Creative sequence=\"1\" id=\"1\"><Linear><Duration>00:00:30</Duration><TrackingEvents><Tracking event=\"start\">https://start.1</Tracking><Tracking event=\"complete\">https://complete.1</Tracking></TrackingEvents><VideoClicks><ClickThrough><![CDATA[http://click.1]]></ClickThrough></VideoClicks><MediaFiles><MediaFile delivery=\"progressive\" bitrate=\"256\" width=\"640\" height=\"480\" type=\"video/mp4\"><![CDATA[http://sample.com/video.mp4]]></MediaFile></MediaFiles></Linear></Creative></Creatives></InLine></Ad></VAST>",
+                    "ext": {
+                        "imptrackers": [
+                            "http://g.cn.miazhen.com/x/k=2039081&p=75VMG&dx=__IPDX__&rt=2&ns=223.104.108.146&ni=__IESID__&v=__LOC__&xa=__ADPLATFORM__&mo=0&m0=__OPENUDID__&m0a=__DUID__&m1=bbd424977f85c210&m1a=__ANDROIDID__&m2=0f11e9b670e033f52da2e3a910523cf0&m4=__AAID__&m5=__IDFA__&m6=__MAC1__&m6a=__MAC__&o=",
+                            "http://dsptrack.ad-mex.com/adImp?requestid=0bsZ061CQfE403tMax38YlB71cvWlvlife&ip=223.104.108.146&app_name=VLife&material_type=banner&price={AUCTION_BID_PRICE}"
+                        ],
+                        "clktrackers": [
+                            "http://e.cn.miazhen.com/r/k=2039081&p=75VMG&dx=__IPDX__&rt=2&ns=__IP__&ni=__IESID__&v=__LOC__&xa=__ADPLATFORM__&vo=32d0b8d2a&vr=2&o=http%3A%2F%2Fad.yoho.cn%2Fhtml5%2F2017%2F02%2Fadidas%2Findex.html",
+                            "http://dsptrackhp=223.104.108.146&app_name=VLife&material_type=banner"
+                        ],
+                        "clkurl": "http://ad.yoho1.cn/html5/2017/02/adidas/index.html",
+                        "inventory_type": 3
+                    }
+                }
+            ]
+        }
+    ]
+}
 ```
