@@ -186,8 +186,8 @@ There are three steps in RTB processing:
 
 | parameter   | type  | default value | mandatory | description                                                                                                                                                |
 | ----------- | ----- | ------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| mimes       | array |               | yes       | Whitelist of content MIME types supported. Popular MIME types include, but are not limited to "image/jpg", "image/gif" and "application/x-shockwave-flash" |
-| protocols   | array |               | yes       | Array of supported video bid response protocols                                                                                                            |
+| mimes       | array string|               | yes       | Whitelist of content MIME types supported. Popular MIME types include, but are not limited to "image/jpg", "image/gif" and "application/x-shockwave-flash" |
+| protocols   | array int32|               | yes       | Array of supported video bid response protocols                                                                                                            |
 | minduration | int32 |               | no        | Minimum video ad duration in seconds                                                                                                                       |
 | maxduration | int32 |               | no        | Maximum video ad duration in seconds                                                                                                                       |
 | w           | int32 |               | yes       | Width of the player in pixels                                                                                                                              |
