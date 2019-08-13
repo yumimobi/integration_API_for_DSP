@@ -1,8 +1,8 @@
-# JOSN 请求和返回示例
+# JSON 请求和返回示例
 
 > 示例只适用于 json 协议，系统默认对接都是 pb 协议，如果要使用以下示例，请在对接前予以说明（否则，下方对接示例不可用）
 
-- [JOSN 请求和返回示例](#josn-%E8%AF%B7%E6%B1%82%E5%92%8C%E8%BF%94%E5%9B%9E%E7%A4%BA%E4%BE%8B)
+- [JSON 请求和返回示例](#josn-%E8%AF%B7%E6%B1%82%E5%92%8C%E8%BF%94%E5%9B%9E%E7%A4%BA%E4%BE%8B)
 	- [banner](#banner)
 		- [banner 请求示例](#banner-%E8%AF%B7%E6%B1%82%E7%A4%BA%E4%BE%8B)
 		- [banner 返回示例](#banner-%E8%BF%94%E5%9B%9E%E7%A4%BA%E4%BE%8B)
