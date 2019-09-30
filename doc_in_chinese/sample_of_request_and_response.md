@@ -530,29 +530,42 @@
 > 视频请求的 inventory_type=3；需要返回 vast 视频和展示图片两部分，展示图片可在 iurl 或者 html_snippet 返回。这里简单给出 adm 的 vast 示例，
 
 ```xml
-	<VAST>
-	  <Ad id="14921137">
-	    <InLine>
-	      <AdSystem><![CDATA[ yodao dsp ]]></AdSystem>
-	      <AdTitle><![CDATA[ video ad ]]></AdTitle>
-	      <Description><![CDATA[ video ad ]]></Description>
-	      <Creatives>
-	        <Creative id="14921137" AdID="14921137" sequence="1">
-	          <Linear>
-	            <Duration>00:00:12</Duration>
-	            <MediaFiles>
-	              <MediaFile id="14921137"><![CDATA[ http://live.us.sinaimg.cn/002qTVxrjx074BMTTYSI010401000rFi0k01.mp4 ]]></MediaFile>
-	            </MediaFiles>
-	            <TrackingEvents>
-	              <Tracking event="start"><![CDATA[ http://q105x.cop.yodao.com:8090/impplay.s?ext=Ch4wYnNKZjYxQzU3Wnc0OH%2F%2F%2F%2FwGiAQRXSUZJwgEkYjM1MTM5NDYtOWRmNy00MDhjLTg1YTAtN2M3NzFhMGVlMTJj0gEA2gEFNS4wLjE%3D&event_type=205&play_percent=0.0 ]]></Tracking>
-	              <Tracking event="complete"><![CDATA[ http://qt105x.corp.yodao.com:8090/impplay.s?ext=Ch4wYnNKZjYxQzU3Wnc0OHJ4NlUwellINDIyQnFmdDYQyvQPGMO6HiDTnqQCKLHbjgcwdDoOMTA2LjM4LjEyMC4xMTRA%2BeO8lYUrSAFSBDEzNzhaIGJlN2I5MmEt_type=205&play_percent=1.0 ]]></Tracking>
-	            </TrackingEvents>
-	          </Linear>
-	        </Creative>
-	      </Creatives>
-	    </InLine>
-	  </Ad>
-	</VAST>
+<?xml version="1.0" encoding="utf-8"?>
+<VAST version="3.0">
+    <Ad id="14921137">
+        <InLine>
+            <AdSystem>
+                <![CDATA[ yodao dsp ]]>
+            </AdSystem>
+            <AdTitle>
+                <![CDATA[ video ad ]]>
+            </AdTitle>
+            <Description>
+                <![CDATA[ video ad ]]>
+            </Description>
+            <Creatives>
+                <Creative id="14921137" AdID="14921137" sequence="1">
+                    <Linear>
+                        <Duration>00:00:12</Duration>
+                        <MediaFiles>
+                            <MediaFile id="14921137">
+                                <![CDATA[ http://live.us.sinaimg.cn/002qTVxrjx074BMTTYSI010401000rFi0k01.mp4 ]]>
+                            </MediaFile>
+                        </MediaFiles>
+                        <TrackingEvents>
+                            <Tracking event="start">
+                                <![CDATA[ http://q105x.cop.yodao.com:8090/impplay.s?ext=Ch4wYnNKZjYxQzU3Wnc0OH%2F%2F%2F%2FwGiAQRXSUZJwgEkYjM1MTM5NDYtOWRmNy00MDhjLTg1YTAtN2M3NzFhMGVlMTJj0gEA2gEFNS4wLjE%3D&event_type=205&play_percent=0.0 ]]>
+                            </Tracking>
+                            <Tracking event="complete">
+                                <![CDATA[ http://qt105x.corp.yodao.com:8090/impplay.s?ext=Ch4wYnNKZjYxQzU3Wnc0OHJ4NlUwellINDIyQnFmdDYQyvQPGMO6HiDTnqQCKLHbjgcwdDoOMTA2LjM4LjEyMC4xMTRA%2BeO8lYUrSAFSBDEzNzhaIGJlN2I5MmEt_type=205&play_percent=1.0 ]]>
+                            </Tracking>
+                        </TrackingEvents>
+                    </Linear>
+                </Creative>
+            </Creatives>
+        </InLine>
+    </Ad>
+</VAST>
 ```
 
 
@@ -655,7 +668,7 @@
                     "crid": "370",
                     "w": 640,
                     "h": 960,
-                    "adm": "<VAST version=\"3.0\"><VAST version=\"2.0\"><Ad id=\"12345\"><InLine><AdSystem version=\"1.0\">samplechange</AdSystem><AdTitle><![CDATA[Sample VAST]]></AdTitle><Impression>http://sample.com</Impression><Description><![CDATA[A sample VAST feed]]></Description><Creatives><Creative sequence=\"1\" id=\"1\"><Linear><Duration>00:00:30</Duration><TrackingEvents><Tracking event=\"start\">https://start.1</Tracking><Tracking event=\"complete\">https://complete.1</Tracking></TrackingEvents><VideoClicks><ClickThrough><![CDATA[http://click.1]]></ClickThrough></VideoClicks><MediaFiles><MediaFile delivery=\"progressive\" bitrate=\"256\" width=\"640\" height=\"480\" type=\"video/mp4\"><![CDATA[http://sample.com/video.mp4]]></MediaFile></MediaFiles></Linear></Creative></Creatives></InLine></Ad></VAST>",
+                    "adm": "<?xml version=\"1.0\" encoding=\"utf-8\"?><VAST version=\"3.0\"><Ad id=\"12345\"><InLine><AdSystem version=\"1.0\">samplechange</AdSystem><AdTitle><![CDATA[Sample VAST]]></AdTitle><Impression>http://sample.com</Impression><Description><![CDATA[A sample VAST feed]]></Description><Creatives><Creative sequence=\"1\" id=\"1\"><Linear><Duration>00:00:30</Duration><TrackingEvents><Tracking event=\"start\">https://start.1</Tracking><Tracking event=\"complete\">https://complete.1</Tracking></TrackingEvents><VideoClicks><ClickThrough><![CDATA[http://click.1]]></ClickThrough></VideoClicks><MediaFiles><MediaFile delivery=\"progressive\" bitrate=\"256\" width=\"640\" height=\"480\" type=\"video/mp4\"><![CDATA[http://sample.com/video.mp4]]></MediaFile></MediaFiles></Linear></Creative></Creatives></InLine></Ad></VAST>",
                     "ext": {
                         "imptrackers": [
                             "http://g.cn.miazhen.com/x/k=2039081&p=75VMG&dx=__IPDX__&rt=2&ns=223.104.108.146&ni=__IESID__&v=__LOC__&xa=__ADPLATFORM__&mo=0&m0=__OPENUDID__&m0a=__DUID__&m1=bbd424977f85c210&m1a=__ANDROIDID__&m2=0f11e9b670e033f52da2e3a910523cf0&m4=__AAID__&m5=__IDFA__&m6=__MAC1__&m6a=__MAC__&o=",
