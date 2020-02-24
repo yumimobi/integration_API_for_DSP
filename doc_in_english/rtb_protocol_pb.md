@@ -110,7 +110,7 @@ There are three steps in RTB processing:
 | extensions[android_id]  | string |               | no        | Android Id明文                                                                                                                                                                                                                                                                                                                                                                 |
 | extensions[adid]        | string |               | no        | for iOS, it is IDFA( Identifier for Advertising); for Android, it is AAID(Google Advertising ID)                                                                                                                                                                                                                                                                               |
 | extensions[orientation] | int    |               | no        | the orientation of device when request is sent, 1: portrait, 2: landscape |
-| extensions[oaid]        | string |               | no        | unique ID identification of domestic Android devices defined by China security alliance, IOS does not need to be filled in  |
+| extensions[oaid]        | string |               | no        | unique ID identification of domestic Android devices defined by China security alliance, iOS does not need to be filled in  |
 
 #### BidRequest.Device.Geo
 

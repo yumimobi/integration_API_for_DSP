@@ -130,7 +130,7 @@ There are three steps in RTB processing:
 | android_id  | string |               | no        | Android ID is an unique ID to each device. It is used to identify your device for market downloads                                                                                                                                                                                                                                                                              |
 | adid        | string |               | no        | for iOS, it is IDFA( Identifier for Advertising); for Android, it is AAID(Google Advertising ID)                                                                                                                                                                                                                                                                                |
 | orientation | string |               | no        | the orientation of device when request is sent, 1: portrait, 2: landscape           |
-| oaid        | string |               | no   | unique ID identification of domestic Android devices defined by China security alliance, IOS does not need to be filled in  |
+| oaid        | string |               | no   | unique ID identification of domestic Android devices defined by China security alliance, iOS does not need to be filled in  |
 
 #### BidRequest.Device.Geo
 
