@@ -118,6 +118,7 @@ Zplay Adx RTB 总共包含三个步骤。
 | extensions[android_id]  | string |        | 否   | Android Id明文                                                                                                                                                       |
 | extensions[adid]        | string |        | 否   | iOS ADID(也叫IDFA)或Android ADID（国内手机一般没有）                                                                                                                 |
 | extensions[orientation] | int    |        | 否   | 设备屏幕方向：1： 竖向，2： 横向                                                                                                                                     |
+| extensions[oaid]        | string |        | 否   | 中国安全联盟定义的国内安卓设备唯一ID标识，iOS无需填写  |
 
 #### Geo对象（BidRequest.Device.Geo）
 

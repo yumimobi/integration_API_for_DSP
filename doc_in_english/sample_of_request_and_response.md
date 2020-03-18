@@ -85,6 +85,7 @@
       "mac": "9c:a5:c0:cb:0a:e7",
       "android_id": "b130955d7ef56ed4",
       "adid": "",
+      "oaid": "fe8061aa-1079-35d2-a218-c4aa739f7845",
       "orientation": 1
     }
   },
@@ -250,6 +251,7 @@
       "mac": "02:00:00:00:00:00",
       "android_id": "705cce10d9d051a8",
       "adid": "",
+      "oaid": "fe8061aa-1079-35d2-a218-c4aa739f7845",
       "orientation": 1
     }
   },
@@ -447,6 +449,7 @@
       "mac": "",
       "android_id": "e2f7602bff92ced8",
       "adid": "",
+      "oaid": "fe8061aa-1079-35d2-a218-c4aa739f7845",
       "orientation": 2
     }
   },
@@ -636,6 +639,7 @@
       "mac": "02:00:00:00:00:00",
       "android_id": "705cce10d9d051a8",
       "adid": "",
+      "oaid": "fe8061aa-1079-35d2-a218-c4aa739f7845",
       "orientation": 1
     }
   },

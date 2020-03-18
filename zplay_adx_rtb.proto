@@ -65,6 +65,9 @@ extend zadx.BidRequest.Device {
 
     // idfv码
     optional string idfv = 207;
+
+    // oaid码
+    optional string oaid = 208; 
 }
 
 extend zadx.BidResponse.SeatBid.Bid {
